@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ContactForm from './components/ContactForm';
 import SearchBox from './components/SearchBox';
 import ContactList from './components/ContactList';
+import styles from './App.module.css'; 
 
 const LOCAL_STORAGE_KEY = 'phonebook-contacts';
 
@@ -51,8 +52,8 @@ function App() {
   );
 
   return (
-    <div className="container">
-      <h1>Phonebook</h1>
+    <div className={styles.container}>
+      <h1 className={styles.h1}>Phonebook</h1>
       <ContactForm onAddContact={handleAddContact} />
       <SearchBox filter={filter} onFilterChange={handleFilterChange} />
       <ContactList contacts={filteredContacts} onDeleteContact={handleDeleteContact} />
